@@ -15,4 +15,8 @@ def findNearestIdx(array, value):
 
 def findNearest(array, value):
     '''Return the nearest value in an array to the given value'''
-    return array[findNearestIdx(array, value)]
+    try:
+        nearest = array[findNearestIdx(array, value)]
+    except IndexError:
+        nearest = np.asscalar(array)
+    return nearest
